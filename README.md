@@ -8,6 +8,8 @@ ng build
 ```
 
 ## Run
+
+### with Angular CLI
 `ng serve`
 
 ### with docker
