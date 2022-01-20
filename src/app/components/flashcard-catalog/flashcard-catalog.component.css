@@ -1,0 +1,11 @@
+:host {}
+
+virtual-scroller {
+  height: 100%;
+}
+
+mat-flashcard {
+  margin: 12px;
+  position: relative;
+  cursor: pointer;
+}

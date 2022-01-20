@@ -1,0 +1,96 @@
+/*
+ * card face color
+ */
+@red: #EC1F26;
+@yellow: #FFD92E;
+@pink: #F289AA;
+@orange: #F37C28;
+@purple: #98377C;
+@blue: #0096D5;
+@green: #60A74A;
+@violet: #5E549B;
+
+.block__showcase-color (@color) {
+  background-color: spin(@color, 180);
+
+  .block__cardface_front {
+    .block__cardface_wrap {
+      font-size: 32pt;
+    }
+    color: contrast(@color, #000, #fff);
+    background-color: @color;
+  }
+
+  .block__cardface_back {
+    .block__cardface_back-color (@color);
+  }
+}
+
+.block__cardface_back-color (@color) {
+  color: contrast(@color, #000, #fff);
+  background-color: darken(@color, 10%);
+}
+
+.block__showcase--red {
+  .block__showcase-color (@red);
+}
+
+.block__showcase--yellow {
+  .block__showcase-color (@yellow);
+}
+
+.block__showcase--pink {
+  .block__showcase-color (@pink);
+}
+
+.block__showcase--orange {
+  .block__showcase-color (@orange);
+}
+
+.block__showcase--purple {
+  .block__showcase-color (@purple);
+}
+
+.block__showcase--blue {
+  .block__showcase-color (@blue);
+}
+
+.block__showcase--green {
+  .block__showcase-color (@green);
+}
+
+.block__showcase--violet {
+  .block__showcase-color (@violet);
+}
+
+.block__cardface_back--red {
+  .block__cardface_back-color (@red);
+}
+
+.block__cardface_back--yellow {
+  .block__cardface_back-color (@yellow);
+}
+
+.block__cardface_back--pink {
+  .block__cardface_back-color (@pink);
+}
+
+.block__cardface_back--orange {
+  .block__cardface_back-color (@orange);
+}
+
+.block__cardface_back--purple {
+  .block__cardface_back-color (@purple);
+}
+
+.block__cardface_back--blue {
+  .block__cardface_back-color (@blue);
+}
+
+.block__cardface_back--green {
+  .block__cardface_back-color (@green);
+}
+
+.block__cardface_back--violet {
+  .block__cardface_back-color (@violet);
+}

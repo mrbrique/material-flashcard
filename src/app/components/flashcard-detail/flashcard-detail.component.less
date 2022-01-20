@@ -1,0 +1,108 @@
+/*
+ * backdrop color
+ */
+@red: #EC1F26;
+@yellow: #FFD92E;
+@pink: #F289AA;
+@orange: #F37C28;
+@purple: #98377C;
+@blue: #0096D5;
+@green: #60A74A;
+@violet: #5E549B;
+@spotlightWidth: 128px;
+@spotlightHeight: 128px;
+
+.flashcard__detail_layout {
+  box-sizing: border-box;
+  min-height: 100%;
+
+  mat-divider {
+    height: 1px;
+  }
+
+  .flashcard__detail_backdrop {
+    width: 360px;
+    height: 200px;
+    background-color: #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .flashcard__detail_close {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      color: white;
+    }
+
+    .flashcard__detail_spotlight {
+      width: @spotlightWidth;
+      height: @spotlightHeight;
+      border-radius: 50%;
+      background-color: white;
+      text-align: center;
+
+      .flashcard__detail_icon {
+        line-height: @spotlightHeight;
+        font-size: 72pt;
+      }
+    }
+  }
+
+  .flashcard__detail_list {
+    .flashcard__icon_font {
+      font-family: Roboto, Verdana, Geneva, sans-serif;
+      font-size: 22px;
+    }
+
+    .flashcard__detail_prop {
+      color: #7a7a7a;
+    }
+  }
+
+  .flashcard__color_palette {
+    width: 24px;
+    height: 24px;
+    border: 1px solid grey;
+  }
+
+  mat-icon {
+    text-align: center;
+  }
+}
+
+.flashcard__detail_backdrop-color (@color) {
+  background-image: radial-gradient(farthest-corner at 0% 0%, lighten(@color, 20%), @color);
+}
+
+.flashcard__detail_backdrop--red {
+  .flashcard__detail_backdrop-color (@red);
+}
+
+.flashcard__detail_backdrop--yellow {
+  .flashcard__detail_backdrop-color (@yellow);
+}
+
+.flashcard__detail_backdrop--pink {
+  .flashcard__detail_backdrop-color (@pink);
+}
+
+.flashcard__detail_backdrop--orange {
+  .flashcard__detail_backdrop-color (@orange);
+}
+
+.flashcard__detail_backdrop--purple {
+  .flashcard__detail_backdrop-color (@purple);
+}
+
+.flashcard__detail_backdrop--blue {
+  .flashcard__detail_backdrop-color (@blue);
+}
+
+.flashcard__detail_backdrop--green {
+  .flashcard__detail_backdrop-color (@green);
+}
+
+.flashcard__detail_backdrop--violet {
+  .flashcard__detail_backdrop-color (@violet);
+}

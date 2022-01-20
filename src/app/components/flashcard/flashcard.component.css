@@ -1,0 +1,11 @@
+@import 'https://fonts.googleapis.com/icon?family=Material+Icons';
+
+@font-face {
+  font-family: "KGPrimaryPenmanship2";
+  src: url("./assets/font/KGPrimaryPenmanship2.ttf") format("opentype");
+}
+
+@font-face {
+  font-family: "KGPrimaryLinedNOSPACE";
+  src: url("./assets/font/KGPrimaryLinedNOSPACE.ttf") format("opentype");
+}

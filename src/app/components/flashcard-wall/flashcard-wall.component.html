@@ -1,0 +1,5 @@
+<mat-grid-list [cols]="gridColumns" rowHeight="fit" class="grid-list ">
+  <mat-grid-tile *ngFor="let mat of choosen">
+    <flashcard-block [material]="mat"></flashcard-block>
+  </mat-grid-tile>
+</mat-grid-list>

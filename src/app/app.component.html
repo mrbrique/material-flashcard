@@ -1,0 +1,27 @@
+<mat-toolbar class="toolbar mat-elevation-z4">
+  <mat-toolbar-row>
+    <button mat-button>
+      <mat-icon class="material__icon">
+        <div class="material__square">
+          <div class="material__triangle"></div>
+        </div>
+      </mat-icon>
+      <span class="flashcard__title">Flashcard</span>
+    </button>
+    <button mat-button routerLink="/wall" *ngIf="largeScreen">Card Wall</button>
+    <button mat-button routerLink="/catalog" *ngIf="largeScreen">Catalogue</button>
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-drawer-container class="drawer__container">
+  <mat-drawer-content on-cardclick="onCardClick($event)" class="drawer__content">
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+
+  <mat-drawer #drawerFlashcard *ngIf="largeScreen" position="end">
+    <mat-drawer-content *ngIf="selectedMaterial" class="flashcard__detail">
+      <flashcard-detail [material]="selectedMaterial" on-closeDetail="onCloseDetail()"></flashcard-detail>
+    </mat-drawer-content>
+
+  </mat-drawer>
+
+</mat-drawer-container>

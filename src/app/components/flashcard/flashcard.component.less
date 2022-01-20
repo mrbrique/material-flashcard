@@ -1,0 +1,206 @@
+/*
+ * card face color
+ */
+@red: #EC1F26;
+@yellow: #FFD92E;
+@pink: #F289AA;
+@orange: #F37C28;
+@purple: #98377C;
+@blue: #0096D5;
+@green: #60A74A;
+@violet: #5E549B; /*
+ * card border style
+ */
+@card-border-width: 8px;
+@card-border-radius: 0.125in; /*
+ * card index style
+ */
+@card-index-diameter: 0.5in;
+@card-index-offset: @card-index-diameter / 2;
+@card-index-wrap-width: (@card-index-diameter - @card-index-offset); /*
+ * card paper style
+ */
+
+.card-paper-background {
+  background-image: radial-gradient(farthest-corner at 25% 25%, white 20%, #f6f6f4);
+}
+
+.card-paper-finish {
+  background-image: url("./assets/image/noise-6-4-216x332.png");
+}
+
+.center {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+/*
+ * card font style
+ */
+@card-font-color: grey;
+
+.card-font-family {
+  font-family: KGPrimaryPenmanship2, Verdana, Arial, sans-serif;
+}
+
+.card-font-style {
+  .card-font-family ();
+  color: @card-font-color;
+}
+
+:host {
+  display: inline-block;
+  border-radius: @card-border-radius;
+  overflow: hidden;
+}
+
+.flashcard {
+  width: 2.125in;
+  height: 3.370in;
+  position: relative;
+  box-sizing: border-box;
+
+  .flashcard__finish {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    .card-paper-finish ();
+  }
+
+  .flashcard__border {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+
+    .flashcard__paper {
+      box-sizing: border-box;
+      width: 100%;
+      height: 100%;
+      padding: 16px 8px;
+      border-radius: @card-border-radius;
+      .card-paper-background ();
+
+      .flashcard__index {
+        width: @card-index-diameter;
+        height: @card-index-diameter;
+        position: absolute;
+        top: -(@card-index-offset);
+        right: -(@card-index-offset);
+        border-radius: @card-index-diameter;
+
+        .flashcard__index_wrap {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: @card-index-wrap-width;
+          height: @card-index-wrap-width;
+          text-align: center;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 14pt;
+        }
+      }
+
+      .flashcard__icon {
+        position: relative;
+        height: percentage((10 / 21));
+        .center ();
+
+        .material-icons {
+          font-size: 96pt;
+        }
+      }
+
+      .flashcard__ligatures {
+        font-size: 23pt;
+        height: percentage((8 / 21));
+        .center ();
+        .card-font-style ();
+      }
+
+      .flashcard__prefix {
+        height: percentage((3 / 21));
+        font-size: 28pt;
+        letter-spacing: 4px;
+        padding-left: 8px;
+        .card-font-style ();
+      }
+    }
+
+    .flashcard__cr {
+      position: absolute;
+      padding: 4px 6px 3px;
+      bottom: 0;
+      right: 0;
+      font-size: 6pt;
+      font-family: Arial, Helvetica, sans-serif;
+      border-radius: @card-border-radius;
+    }
+  }
+}
+
+.flashcard-color (@color) {
+  background-color: @color;
+
+  .flashcard__border {
+    background-color: @color;
+    border: @card-border-width solid @color;
+  }
+
+  .flashcard__index {
+    border: @card-border-width solid @color;
+    background-color: @color;
+    color: white;
+    .card-font-family ();
+  }
+
+  .flashcard__icon {
+    color: @color;
+  }
+
+  .flashcard__cr {
+    background-color: @color;
+    @half-grey: rgb(50%, 50%, 50%);
+    @contrast: -25%;
+    @foreground-luma: luma(@color);
+    @max-luma: 100;
+    @contrast-lima: mod((@max-luma * floor(abs(@foreground-luma) + abs(@contrast)))+@foreground-luma+@contrast, @max-luma);
+    color: hsl(0, 0, @contrast-lima);
+  }
+}
+
+.flashcard--red {
+  .flashcard-color (@red);
+}
+
+.flashcard--yellow {
+  .flashcard-color (@yellow);
+}
+
+.flashcard--pink {
+  .flashcard-color (@pink);
+}
+
+.flashcard--orange {
+  .flashcard-color (@orange);
+}
+
+.flashcard--purple {
+  .flashcard-color (@purple);
+}
+
+.flashcard--blue {
+  .flashcard-color (@blue);
+}
+
+.flashcard--green {
+  .flashcard-color (@green);
+}
+
+.flashcard--violet {
+  .flashcard-color (@violet);
+}

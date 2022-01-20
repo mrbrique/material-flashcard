@@ -1,0 +1,53 @@
+<mat-card class="flashcard__detail_layout">
+  <div mat-card-image class="flashcard__detail_backdrop" [ngClass]="'flashcard__detail_backdrop--'+material.color().name">
+    <button mat-icon-button class="flashcard__detail_close" on-click="onCloseDetailClick()">
+      <mat-icon>cancel</mat-icon>
+    </button>
+    <div class="flashcard__detail_spotlight">
+      <span class="flashcard__detail_icon material-icons" [ngStyle]="{'color':material.color().hexRgb}">{{material.getCodepoint().name}}</span>
+    </div>
+  </div>
+
+  <mat-card-title>{{material.literal() | titlecase }}</mat-card-title>
+  <mat-card-subtitle># {{material.getCodepoint().index}}</mat-card-subtitle>
+  <mat-card-content>
+    <mat-card>
+      <mat-card-content>
+        <mat-list class="flashcard__detail_list">
+          <h3 mat-subheader>Icon Data</h3>
+          <mat-list-item role="listitem">
+            <mat-icon mat-list-icon>font_download</mat-icon>
+            <h4 class="flashcard__detail_value" mat-line>{{material.getCodepoint().name}}</h4>
+            <p class="flashcard__detail_prop" mat-line>Ligatures</p>
+          </mat-list-item>
+          <mat-list-item role="listitem">
+            <mat-icon mat-list-icon>gps_fixed</mat-icon>
+            <h4 class="flashcard__detail_value" mat-line>{{material.getCodepoint().code}}</h4>
+            <p class="flashcard__detail_prop" mat-line>Codepoint</p>
+          </mat-list-item>
+          <mat-list-item role="listitem">
+            <mat-icon mat-list-icon>color_lens</mat-icon>
+            <h4 class="flashcard__detail_value" mat-line>{{material.color().hexRgb}}</h4>
+            <p class="flashcard__detail_prop" mat-line>Color</p>
+            <mat-icon>
+              <div class="flashcard__color_palette" [ngStyle]="{'background-color':material.color().hexRgb}">&nbsp;</div>
+            </mat-icon>
+          </mat-list-item>
+          <mat-divider [inset]="true"></mat-divider>
+          <h3 mat-subheader>HTML Entity</h3>
+          <mat-list-item role="listitem">
+            <mat-icon mat-list-icon>code</mat-icon>
+            <h4 class="flashcard__detail_value" mat-line>#&{{material.getCodepoint().code|parseIntPipe:16}}</h4>
+            <p class="flashcard__detail_prop" mat-line>Decimal</p>
+          </mat-list-item>
+          <mat-list-item role="listitem">
+            <mat-icon mat-list-icon>code</mat-icon>
+            <h4 class="flashcard__detail_value" mat-line>#&x{{material.getCodepoint().code}}</h4>
+            <p class="flashcard__detail_prop" mat-line>Hexadecimal</p>
+
+          </mat-list-item>
+        </mat-list>
+      </mat-card-content>
+    </mat-card>
+  </mat-card-content>
+</mat-card>

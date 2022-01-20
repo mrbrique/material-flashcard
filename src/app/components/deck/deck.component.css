@@ -1,0 +1,7 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.deck__flashcard {
+  display: inline;
+  float: left;
+  margin: 8px;
+}

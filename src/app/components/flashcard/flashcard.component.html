@@ -1,0 +1,20 @@
+<div *ngIf="material" class="flashcard" [ngClass]="'flashcard--'+material.color().name">
+  <div class="flashcard__finish"></div>
+  <div class="flashcard__border">
+    <div class="flashcard__paper">
+      <div class="flashcard__index">
+        <div class="flashcard__index_wrap">
+          <span class="flashcard__index_anchor">{{material.getCodepoint().index}}</span>
+        </div>
+      </div>
+      <div class="flashcard__prefix">{{material.prefix() | uppercase }}{{material.prefix() | lowercase }}</div>
+      <div class="flashcard__icon">
+        <span class="material-icons">{{material.getCodepoint().name}}</span>
+      </div>
+      <div class="flashcard__ligatures">
+        <span class="flashcard__ligatures_wrap">{{material.literal() | titlecase }}</span>
+      </div>
+    </div>
+    <div class="flashcard__cr">&copy; 2018 Material Flashcard.</div>
+  </div>
+</div>

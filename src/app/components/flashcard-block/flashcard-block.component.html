@@ -1,0 +1,13 @@
+<div class="block__showcase" [ngClass]="'block__showcase--'+material.color().name">
+  <div class="block__card" [@flip]="isFlipped?'flip':'flat'" (@flip.done)="onFlipComplete($event)">
+    <div class="block__cardface block__cardface_front">
+      <span class="block__cardface_wrap material-icons">{{material.getCodepoint().name}}</span>
+    </div>
+    <div class="block__cardface block__cardface_back">
+      <span class="block__cardface_wrap">{{material.literal() | titlecase }}</span>
+    </div>
+  </div>
+  <div class="block__mask" [ngClass]="'block__cardface_back--'+maskMaterial.color().name" [class.block__mask--visible]="maskVisible" [@slide]="maskVisible?'up':'down'" (@slide.done)="onSlideComplete($event)">
+    <span class="block__mask_wrap">{{maskMaterial.literal() | titlecase }}</span>
+  </div>
+</div>
