@@ -1,6 +1,4 @@
 FROM node:14-alpine
-# install jdk, maven
-RUN apk add --no-cache openjdk11-jdk maven
 # install @angular/cli
 RUN npm install -g @angular/cli
 EXPOSE 4200
