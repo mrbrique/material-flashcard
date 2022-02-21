@@ -4,8 +4,14 @@
       <mat-icon class="flashcard__logo" svgIcon="flashcard-logo"></mat-icon>
       <span class="flashcard__title">Flashcard</span>
     </button>
-    <button mat-button routerLink="/wall" *ngIf="largeScreen">Card Wall</button>
-    <button mat-button routerLink="/catalog" *ngIf="largeScreen">Catalogue</button>
+    <button mat-button routerLink="/wall" *ngIf="largeScreen">
+      <mat-icon svgIcon="wall"></mat-icon>
+      <span>Card Wall</span>
+    </button>
+    <button mat-button routerLink="/catalog" *ngIf="largeScreen">
+      <mat-icon class="icon__cate" svgIcon="catalogue"></mat-icon>
+      <span>Catalogue</span>
+    </button>
   </mat-toolbar-row>
 </mat-toolbar>
 <mat-drawer-container class="drawer__container">

@@ -49,7 +49,15 @@ export class AppComponent {
     });
 
     this.matIconRegistry.addSvgIcon("flashcard-logo",
-      this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/img/flashcard-logo_inverted.svg")
+      this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/img/flashcard-logo_filled.svg")
+    );
+
+    this.matIconRegistry.addSvgIcon("catalogue",
+      this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/img/catalogue.svg")
+    );
+
+    this.matIconRegistry.addSvgIcon("wall",
+      this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/img/wall.svg")
     );
 
 
