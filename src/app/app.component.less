@@ -1,4 +1,4 @@
-@icon-diameter: 32px;
+@icon-diameter: 26px;
 @red: #f05033;
 @blue: #19b5ea;
 @yellow: #f6b412;
@@ -17,36 +17,18 @@
   font-size: 20px;
 }
 
-.material__icon {
+.flashcard__logo {
   width: @icon-diameter;
   height: @icon-diameter;
-  border-radius: (@icon-diameter / 2);
   margin-right: 4px;
-  position: relative;
-  background-color: @blue;
-
-  .material__square {
-    @icon-edge: pow((pow(@icon-diameter, 2) / 2), 0.5);
-    width: @icon-edge;
-    height: @icon-edge;
-    position: absolute;
-    left: ((@icon-diameter - @icon-edge) / 2);
-    top: ((@icon-diameter - @icon-edge) / 2);
-    background-color: @red;
-
-    .material__triangle {
-      border: @icon-edge solid @yellow;
-      border-left: (@icon-edge / 2) solid transparent;
-      border-right: (@icon-edge / 2) solid transparent;
-      border-bottom: 0;
-    }
-  }
+  fill: white;
 }
 
 .toolbar {
   position: relative;
   z-index: 10;
   height: 56px;
+  color: white;
 }
 
 .drawer__container {

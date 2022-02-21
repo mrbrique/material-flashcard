@@ -1,5 +1,8 @@
 import { Component, ViewChild, OnInit, HostBinding } from '@angular/core';
+import { DomSanitizer } from "@angular/platform-browser";
+
 import { MatDrawer } from '@angular/material/sidenav';
+import { MatIconModule, MatIconRegistry } from "@angular/material/icon";
 
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { BreakpointState } from "@angular/cdk/layout";
@@ -36,12 +39,18 @@ export class AppComponent {
 
   constructor(
     breakpointObserver: BreakpointObserver,
+    private matIconRegistry: MatIconRegistry,
+    private domSanitizer: DomSanitizer,
     private router: Router
   ) {
     let widthObservable: Observable<BreakpointState> = breakpointObserver.observe(`(min-width: ${MIN_FULL_WIDTH}px)`);
     widthObservable.subscribe(result => {
       this.onWidthChange(result);
     });
+
+    this.matIconRegistry.addSvgIcon("flashcard-logo",
+      this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/img/flashcard-logo_inverted.svg")
+    );
 
 
     this.router.events.subscribe(event => {

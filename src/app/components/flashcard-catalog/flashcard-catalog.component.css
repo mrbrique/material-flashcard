@@ -5,7 +5,7 @@ virtual-scroller {
 }
 
 mat-flashcard {
-  margin: 12px;
+  margin: 16px;
   position: relative;
   cursor: pointer;
 }

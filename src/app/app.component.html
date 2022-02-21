@@ -1,11 +1,7 @@
-<mat-toolbar class="toolbar mat-elevation-z4">
+<mat-toolbar color="primary" class="toolbar mat-elevation-z4">
   <mat-toolbar-row>
     <button mat-button>
-      <mat-icon class="material__icon">
-        <div class="material__square">
-          <div class="material__triangle"></div>
-        </div>
-      </mat-icon>
+      <mat-icon class="flashcard__logo" svgIcon="flashcard-logo"></mat-icon>
       <span class="flashcard__title">Flashcard</span>
     </button>
     <button mat-button routerLink="/wall" *ngIf="largeScreen">Card Wall</button>
