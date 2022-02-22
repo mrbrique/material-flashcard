@@ -12,7 +12,7 @@ const SKEW_DEGREE = 2;
 @Component({
   selector: 'flashcard-catalog',
   templateUrl: './flashcard-catalog.component.html',
-  styleUrls: ['./flashcard-catalog.component.css'],
+  styleUrls: ['./flashcard-catalog.component.less'],
   animations: [
     trigger('elevation', [
       state('bringup', style({
