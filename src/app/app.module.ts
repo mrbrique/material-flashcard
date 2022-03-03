@@ -30,6 +30,7 @@ import { FlashcardCatalogComponent } from './components/flashcard-catalog/flashc
 import { FlashcardWallComponent } from './components/flashcard-wall/flashcard-wall.component';
 import { FlashcardBlockComponent } from './components/flashcard-block/flashcard-block.component';
 import { FlashcardDetailComponent } from './components/flashcard-detail/flashcard-detail.component';
+import { SplashScreenComponent } from './components/splash-screen/splash-screen.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { FlashcardDetailComponent } from './components/flashcard-detail/flashcar
     FlashcardWallComponent,
     FlashcardBlockComponent,
     ParseIntPipePipe,
-    FlashcardDetailComponent
+    FlashcardDetailComponent,
+    SplashScreenComponent
   ],
   imports: [
     BrowserModule,
