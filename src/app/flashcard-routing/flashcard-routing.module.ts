@@ -7,13 +7,14 @@ import { HandComponent } from '../components/hand/hand.component';
 import { ShuffleComponent } from '../components/shuffle/shuffle.component';
 import { FlashcardCatalogComponent } from '../components/flashcard-catalog/flashcard-catalog.component';
 import { FlashcardWallComponent } from '../components/flashcard-wall/flashcard-wall.component';
+import { SplashScreenComponent } from '../components/splash-screen/splash-screen.component';
 
 const routes: Routes = [
   { path: 'card/:item', component: HandComponent },
   { path: 'shuffle', component: ShuffleComponent },
   { path: 'catalog', component: FlashcardCatalogComponent },
   { path: 'wall', component: FlashcardWallComponent },
-  { path: '', component: FlashcardCatalogComponent }
+  { path: '', component: SplashScreenComponent }
 ];
 
 
@@ -22,4 +23,3 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class FlashcardRoutingModule { }
-

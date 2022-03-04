@@ -1,1 +1,49 @@
-<p>splash-screen works!</p>
+<div class="splash__container" fxLayout="row" fxLayoutAlign="center center">
+
+  <div class='splash__window'>
+    <div class="splash__table">
+      <mat-flashcard class="splash__card splash__card1" [material]="cardDisplay[0]"></mat-flashcard>
+      <mat-flashcard class="splash__card splash__card2" [material]="cardDisplay[1]"></mat-flashcard>
+      <mat-flashcard class="splash__card splash__card3" [material]="cardDisplay[2]"></mat-flashcard>
+      <mat-flashcard class="splash__card splash__card4" [material]="cardDisplay[3]"></mat-flashcard>
+      <mat-flashcard class="splash__card splash__card5" [material]="cardDisplay[4]"></mat-flashcard>
+    </div>
+  </div>
+
+  <div class="splash__home">
+    <div class="splash_headline">Technology e-flashcard<br>
+      for your children</div>
+
+    <div>
+      <mat-list class="splash__points">
+        <mat-list-item>
+          <mat-icon mat-list-icon>star</mat-icon>
+          <div mat-line>2000+ Cards</div>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon mat-list-icon>star</mat-icon>
+          <div mat-line>Alpheat</div>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon mat-list-icon>star</mat-icon>
+          <div mat-line>Digital Icons</div>
+        </mat-list-item>
+      </mat-list>
+      <mat-list class="splash__points">
+        <mat-list-item>
+          <mat-icon mat-list-icon>star</mat-icon>
+          <div mat-line>Colors and Shapes</div>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon mat-list-icon>star</mat-icon>
+          <div mat-line>Technology Vocabulary</div>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon mat-list-icon>star</mat-icon>
+          <div mat-line>Numbers</div>
+        </mat-list-item>
+      </mat-list>
+    </div>
+    <button class="splash__cta" mat-raised-button color="primary">Learn More</button>
+  </div>
+</div>

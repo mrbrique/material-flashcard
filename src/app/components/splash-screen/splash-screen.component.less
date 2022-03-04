@@ -1,0 +1,61 @@
+@window_size: 440px;
+
+.splash__container {
+  height: 100%;
+
+  .splash__window {
+    width: @window_size;
+    height: @window_size;
+
+    .splash__table {
+      position: relative;
+
+      .splash__card {
+        position: absolute;
+        transform-origin: bottom;
+        box-shadow: rgba(0, 0, 0, 0.2) 0 2px 4px -1px, rgba(0, 0, 0, 0.14) 0 4px 5px 0px, rgba(0, 0, 0, 0.12) 0 1px 10px 0;
+      }
+
+      .splash__card1 {
+        transform: rotate(-40deg);
+      }
+
+      .splash__card2 {
+        left: 50px;
+        transform: rotate(-30deg);
+      }
+
+      .splash__card3 {
+        left: 100px;
+        transform: rotate(-20deg);
+      }
+
+      .splash__card4 {
+        left: 150px;
+        transform: rotate(-10deg);
+      }
+
+      .splash__card5 {
+        left: 200px;
+      }
+    }
+  }
+
+  .splash__home {
+    width: @window_size;
+    height: @window_size;
+
+    .splash_headline {
+      font-size: 40px;
+      font-weight: bold;
+    }
+
+    .splash__points {
+      float: left;
+    }
+
+    .splash__cta {
+      margin-top: 16px;
+    }
+  }
+}
