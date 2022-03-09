@@ -1,14 +1,19 @@
-@window_size: 440px;
+@window_width: 450px;
+@window_height: 320px;
 
 .splash__container {
   height: 100%;
 
   .splash__window {
-    width: @window_size;
-    height: @window_size;
+    width: 550px;
+    height: 400px;
+    margin: 36px 0;
+    position: relative;
+    transform-origin: top;
 
     .splash__table {
-      position: relative;
+      position: absolute;
+      right: 0;
 
       .splash__card {
         position: absolute;
@@ -17,37 +22,40 @@
       }
 
       .splash__card1 {
+        right: 160px;
         transform: rotate(-40deg);
       }
 
       .splash__card2 {
-        left: 50px;
+        right: 120px;
         transform: rotate(-30deg);
       }
 
       .splash__card3 {
-        left: 100px;
+        right: 80px;
         transform: rotate(-20deg);
       }
 
       .splash__card4 {
-        left: 150px;
+        right: 40px;
         transform: rotate(-10deg);
       }
 
       .splash__card5 {
-        left: 200px;
+        right: 0;
       }
     }
   }
 
   .splash__home {
-    width: @window_size;
-    height: @window_size;
+    width: @window_width;
 
     .splash_headline {
-      font-size: 40px;
+      font-size: 6vw;
       font-weight: bold;
+      @media screen and (min-width: 960px) {
+        font-size: 4rem;
+      }
     }
 
     .splash__points {
@@ -57,5 +65,23 @@
     .splash__cta {
       margin-top: 16px;
     }
+  }
+}
+
+.splash__container.splash__container--sm {
+  .splash__window {
+    height: 60vw;
+    transform: scale(.8);
+  }
+
+  .splash__home {
+    text-align: center;
+    height: 50%;
+  }
+}
+
+.splash__container.splash__container--xs {
+  .splash__window {
+    transform: scale(.5);
   }
 }
