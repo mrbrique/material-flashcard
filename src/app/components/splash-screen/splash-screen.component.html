@@ -1,7 +1,7 @@
-<div class="splash__container" fxLayout="row" fxLayoutGap="36px" fxLayoutAlign="center center" fxLayoutAlign.lt-md="start center" fxLayout.lt-md="column" ngClass.lt-md="splash__container--sm" ngClass.lt-sm="splash__container--sm splash__container--xs">
+<div class="splash__container" fxLayout="row" fxLayoutGap="36px" fxLayoutAlign="center center" fxLayoutAlign.lt-md="start center" fxLayoutGap.lt-md="0px" fxLayout.lt-md="column" ngClass.lt-md="splash__container--sm"  ngClass.lt-sm="splash__container--sm splash__container--xs" >
 
-  <div class='splash__window'>
-    <div class="splash__table">
+  <div #splashWindow class='splash__window'>
+    <div class="splash__deck">
       <mat-flashcard class="splash__card splash__card1" [material]="cardDisplay[0]"></mat-flashcard>
       <mat-flashcard class="splash__card splash__card2" [material]="cardDisplay[1]"></mat-flashcard>
       <mat-flashcard class="splash__card splash__card3" [material]="cardDisplay[2]"></mat-flashcard>
