@@ -2,13 +2,13 @@
   <mat-toolbar-row>
     <button mat-button routerLink="/">
       <mat-icon class="flashcard__logo" svgIcon="flashcard-logo"></mat-icon>
-      <span class="flashcard__title">Flashcard</span>
+      <span class="flashcard__title" fxHide.lt-sm="true">Flashcard</span>
     </button>
-    <button mat-button routerLink="/wall" *ngIf="largeScreen">
+    <button mat-button routerLink="/wall" fxHide.lt-sm="true">
       <mat-icon svgIcon="wall"></mat-icon>
       <span>Card Wall</span>
     </button>
-    <button mat-button routerLink="/catalog" *ngIf="largeScreen">
+    <button mat-button routerLink="/catalog" fxHide.lt-sm="true">
       <mat-icon class="icon__cate" svgIcon="catalogue"></mat-icon>
       <span>Catalogue</span>
     </button>
@@ -19,7 +19,7 @@
     <router-outlet></router-outlet>
   </mat-drawer-content>
 
-  <mat-drawer #drawerFlashcard *ngIf="largeScreen" position="end">
+  <mat-drawer #drawerFlashcard fxHide.lt-md="true" position="end">
     <mat-drawer-content *ngIf="selectedMaterial" class="flashcard__detail">
       <flashcard-detail [material]="selectedMaterial" on-closeDetail="onCloseDetail()"></flashcard-detail>
     </mat-drawer-content>

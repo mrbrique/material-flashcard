@@ -2,19 +2,16 @@ import { Component, ViewChild, OnInit, HostBinding } from '@angular/core';
 import { DomSanitizer } from "@angular/platform-browser";
 
 import { MatDrawer } from '@angular/material/sidenav';
-import { MatIconModule, MatIconRegistry } from "@angular/material/icon";
+import { MatIconRegistry } from "@angular/material/icon";
 
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { BreakpointState } from "@angular/cdk/layout";
 import { Router, NavigationStart } from "@angular/router";
+import { MediaChange, MediaObserver } from '@angular/flex-layout';
 
 import { Material } from './material/shared/material.model';
 import { Observable } from "rxjs";
 
-
-const MIN_FULL_WIDTH = 570;
-const FULL_MEDIA_CLASS = 'flashcard__app--full';
-const MINI_MEDIA_CLASS = 'flashcard__app--mini';
 
 
 
@@ -23,7 +20,7 @@ const MINI_MEDIA_CLASS = 'flashcard__app--mini';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.less']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
 
   @ViewChild('drawerFlashcard') drawer: MatDrawer;
@@ -34,19 +31,12 @@ export class AppComponent {
 
   largeScreen: boolean;
 
-  @HostBinding('class')
-  mediaClass: string;
-
   constructor(
-    breakpointObserver: BreakpointObserver,
+    private mediaObserver: MediaObserver,
     private matIconRegistry: MatIconRegistry,
     private domSanitizer: DomSanitizer,
     private router: Router
   ) {
-    let widthObservable: Observable<BreakpointState> = breakpointObserver.observe(`(min-width: ${MIN_FULL_WIDTH}px)`);
-    widthObservable.subscribe(result => {
-      this.onWidthChange(result);
-    });
 
     this.matIconRegistry.addSvgIcon("flashcard-logo",
       this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/img/flashcard-logo_filled.svg")
@@ -69,16 +59,13 @@ export class AppComponent {
     });
   }
 
+  ngOnInit() { }
+
   onCardClick(event) {
-    if (this.largeScreen) {
+    if (!this.mediaObserver.isActive('lt-md')) {
       this.drawer.open();
       this.selectedMaterial = event.detail;
     }
-  }
-
-  onWidthChange(result: BreakpointState) {
-    this.largeScreen = result.matches;
-    this.mediaClass = this.largeScreen ? FULL_MEDIA_CLASS : MINI_MEDIA_CLASS;
   }
 
   onCloseDetail() {
