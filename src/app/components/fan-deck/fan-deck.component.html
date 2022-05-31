@@ -1,0 +1,5 @@
+<div class="deck__fan">
+
+  <mat-flashcard *ngFor="let mat of cardDisplay; let i = index" class="deck__card" [ngClass]="'deck__card' + i" [material]="cardDisplay[i]" [ngStyle]="styleRotate(i)"></mat-flashcard>
+
+</div>

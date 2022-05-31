@@ -8,12 +8,14 @@ import { ShuffleComponent } from '../components/shuffle/shuffle.component';
 import { FlashcardCatalogComponent } from '../components/flashcard-catalog/flashcard-catalog.component';
 import { FlashcardWallComponent } from '../components/flashcard-wall/flashcard-wall.component';
 import { SplashScreenComponent } from '../components/splash-screen/splash-screen.component';
+import { FanDeckComponent } from '../components/fan-deck/fan-deck.component';
 
 const routes: Routes = [
   { path: 'card/:item', component: HandComponent },
   { path: 'shuffle', component: ShuffleComponent },
   { path: 'catalog', component: FlashcardCatalogComponent },
   { path: 'wall', component: FlashcardWallComponent },
+  { path: 'fan', component: FanDeckComponent },
   { path: '', component: SplashScreenComponent }
 ];
 
