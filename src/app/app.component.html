@@ -1,9 +1,14 @@
 <mat-toolbar color="primary" class="toolbar mat-elevation-z4">
   <mat-toolbar-row>
-    <button mat-button routerLink="/">
-      <mat-icon class="flashcard__logo" svgIcon="flashcard-logo"></mat-icon>
-      <span class="flashcard__title" fxHide.lt-sm="true">Flashcard</span>
+    <button fxHide fxShow.lt-sm="true" mat-icon-button on-click="drawerSidenav.toggle()">
+      <mat-icon>menu</mat-icon>
     </button>
+    <span class="telescopic" ngClass.lt-sm="telescopic--sm">
+      <button mat-button routerLink="/">
+        <mat-icon class="flashcard__logo" svgIcon="flashcard-logo"></mat-icon>
+        <span class="flashcard__title" fxHide.lt-sm="true">Flashcard</span>
+      </button>
+    </span>
     <button mat-button routerLink="/wall" fxHide.lt-sm="true">
       <mat-icon svgIcon="wall"></mat-icon>
       <span>Card Wall</span>
@@ -15,6 +20,19 @@
   </mat-toolbar-row>
 </mat-toolbar>
 <mat-drawer-container class="drawer__container">
+  <mat-drawer #drawerSidenav class="drawer__sidenav" mode="over">
+    <mat-action-list on-click="drawerSidenav.close()">
+      <button mat-list-item routerLink="/wall">
+        <mat-icon svgIcon="wall"></mat-icon>
+        <span>Card Wall</span>
+      </button>
+      <button mat-list-item routerLink="/catalog">
+        <mat-icon class="icon__cate" svgIcon="catalogue"></mat-icon>
+        <span>Catalogue</span>
+      </button>
+    </mat-action-list>
+  </mat-drawer>
+
   <mat-drawer-content on-cardclick="onCardClick($event)" class="drawer__content">
     <router-outlet></router-outlet>
   </mat-drawer-content>

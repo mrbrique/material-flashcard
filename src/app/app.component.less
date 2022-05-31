@@ -22,6 +22,14 @@ mat-icon {
   transform: scaleY(-1);
 }
 
+.telescopic {
+  text-align: center;
+}
+
+.telescopic--sm {
+  width: 100%;
+}
+
 .flashcard__title {
   font-size: 20px;
 }
@@ -41,6 +49,15 @@ mat-icon {
 
 .drawer__container {
   flex: 1;
+
+  .drawer__sidenav {
+    width: 200px;
+
+    mat-icon {
+      padding: 8px;
+      fill: rgba(0,0,0,.87);
+    }
+  }
 }
 
 .flashcard__detail {
