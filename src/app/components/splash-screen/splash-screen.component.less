@@ -7,6 +7,11 @@
 
   .splash__row.splash__intro {
     align-items: start;
+
+    .splash__intro__margin {
+      width: 36px;
+      height: 0;
+    }
   }
 
   .splash__row {
@@ -15,7 +20,7 @@
     align-items: center;
 
     .splash__cell {
-      width: @window_width;
+      max-width: @window_width;
     }
 
     .splash__feature {
@@ -38,62 +43,62 @@
   .splash__row--reverse {
     flex-direction: row-reverse;
   }
-.splash__window {
-  width: 100%;
-  max-width: 550px;
-  height: @window_height;
-  min-height: 240px;
-  margin-right: 36px;
-  position: relative;
 
-  .splash__deck {
-    position: absolute;
+  .splash__window {
     width: 100%;
+    max-width: 550px;
+    height: @window_height;
+    min-height: 240px;
+    position: relative;
 
-    .splash__card {
+    .splash__deck {
       position: absolute;
-      transform-origin: bottom;
-      box-shadow: rgba(0, 0, 0, 0.2) 0 2px 4px -1px, rgba(0, 0, 0, 0.14) 0 4px 5px 0px, rgba(0, 0, 0, 0.12) 0 1px 10px 0;
-    }
+      width: 100%;
 
-    .splash__card1 {
-      right: 20%;
-      transform: rotate(-40deg);
-    }
+      .splash__card {
+        position: absolute;
+        transform-origin: bottom;
+        box-shadow: rgba(0, 0, 0, 0.2) 0 2px 4px -1px, rgba(0, 0, 0, 0.14) 0 4px 5px 0px, rgba(0, 0, 0, 0.12) 0 1px 10px 0;
+      }
 
-    .splash__card2 {
-      right: 15%;
-      transform: rotate(-30deg);
-    }
+      .splash__card1 {
+        right: 20%;
+        transform: rotate(-40deg);
+      }
 
-    .splash__card3 {
-      right: 10%;
-      transform: rotate(-20deg);
-    }
+      .splash__card2 {
+        right: 15%;
+        transform: rotate(-30deg);
+      }
 
-    .splash__card4 {
-      right: 5%;
-      transform: rotate(-10deg);
-    }
+      .splash__card3 {
+        right: 10%;
+        transform: rotate(-20deg);
+      }
 
-    .splash__card5 {
-      right: 0;
+      .splash__card4 {
+        right: 5%;
+        transform: rotate(-10deg);
+      }
+
+      .splash__card5 {
+        right: 0;
+      }
     }
   }
-}
 
-.splash__home {
-  width: @window_width;
+  .splash__home {
+    width: @window_width;
 
-  .splash_headline {
-    font-weight: bold;
-    font-size: 4rem;
+    .splash_headline {
+      font-weight: bold;
+      font-size: 4rem;
+    }
+
+    .splash__cta {
+      margin-top: 16px;
+    }
   }
-
-  .splash__cta {
-    margin-top: 16px;
-  }
-}
 }
 // extra style for small screen
 
@@ -102,7 +107,11 @@
     display: flex;
     flex-direction: column;
 
-    .splash__cell {}
+    .splash__cell {
+      .splash__img {
+        max-width: 280px;
+      }
+    }
   }
 
   .splash__window {
