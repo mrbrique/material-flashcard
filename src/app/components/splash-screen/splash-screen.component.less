@@ -3,74 +3,112 @@
 
 .splash__container {
   height: 100%;
+  margin: 36px 0;
 
-  .splash__window {
-    width: 100%;
-    max-width: 550px;
-    height: @window_height;
-    min-height: 240px;
-    margin: 36px 0;
-    position: relative;
-
-    .splash__deck {
-      position: absolute;
-      width: 100%;
-
-      .splash__card {
-        position: absolute;
-        transform-origin: bottom;
-        box-shadow: rgba(0, 0, 0, 0.2) 0 2px 4px -1px, rgba(0, 0, 0, 0.14) 0 4px 5px 0px, rgba(0, 0, 0, 0.12) 0 1px 10px 0;
-      }
-
-      .splash__card1 {
-        right: 20%;
-        transform: rotate(-40deg);
-      }
-
-      .splash__card2 {
-        right: 15%;
-        transform: rotate(-30deg);
-      }
-
-      .splash__card3 {
-        right: 10%;
-        transform: rotate(-20deg);
-      }
-
-      .splash__card4 {
-        right: 5%;
-        transform: rotate(-10deg);
-      }
-
-      .splash__card5 {
-        right: 0;
-      }
-    }
+  .splash__row.splash__intro {
+    align-items: start;
   }
 
-  .splash__home {
-    width: @window_width;
-    height: @window_height;
+  .splash__row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 
-    .splash_headline {
-      font-weight: bold;
+    .splash__cell {
+      width: @window_width;
+    }
+
+    .splash__feature {
+      text-align: center;
+      border-radius: 8px;
+
+      .splash__img {
+        max-width: 360px;
+        padding: 8px;
+      }
+    }
+
+    .splash__promo {
+      text-align: center;
+      padding-bottom: 8px;
       font-size: 3rem;
-      @media screen and (min-width: 960px) {
-        font-size: 4rem;
-      }
-    }
-
-    .splash__cta {
-      margin-top: 16px;
     }
   }
+
+  .splash__row--reverse {
+    flex-direction: row-reverse;
+  }
+.splash__window {
+  width: 100%;
+  max-width: 550px;
+  height: @window_height;
+  min-height: 240px;
+  margin-right: 36px;
+  position: relative;
+
+  .splash__deck {
+    position: absolute;
+    width: 100%;
+
+    .splash__card {
+      position: absolute;
+      transform-origin: bottom;
+      box-shadow: rgba(0, 0, 0, 0.2) 0 2px 4px -1px, rgba(0, 0, 0, 0.14) 0 4px 5px 0px, rgba(0, 0, 0, 0.12) 0 1px 10px 0;
+    }
+
+    .splash__card1 {
+      right: 20%;
+      transform: rotate(-40deg);
+    }
+
+    .splash__card2 {
+      right: 15%;
+      transform: rotate(-30deg);
+    }
+
+    .splash__card3 {
+      right: 10%;
+      transform: rotate(-20deg);
+    }
+
+    .splash__card4 {
+      right: 5%;
+      transform: rotate(-10deg);
+    }
+
+    .splash__card5 {
+      right: 0;
+    }
+  }
+}
+
+.splash__home {
+  width: @window_width;
+
+  .splash_headline {
+    font-weight: bold;
+    font-size: 4rem;
+  }
+
+  .splash__cta {
+    margin-top: 16px;
+  }
+}
 }
 // extra style for small screen
 
 .splash__container.splash__container--sm {
+  .splash__row {
+    display: flex;
+    flex-direction: column;
+
+    .splash__cell {}
+  }
+
   .splash__window {
     height: 300px;
     min-height: 300px;
+    margin-right: 0;
 
     .splash__deck {
       transform: scale(0.75);
@@ -109,6 +147,10 @@
   .splash__home {
     text-align: center;
     width: 100%;
+
+    .splash_headline {
+      font-size: 3rem;
+    }
 
     .splash__cta {
       margin-bottom: 36px;

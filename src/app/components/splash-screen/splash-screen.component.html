@@ -1,16 +1,42 @@
-<div class="splash__container" fxLayout="row" fxLayoutGap="36px" fxLayoutAlign="center center" fxLayoutAlign.lt-md="start center" fxLayoutGap.lt-md="0px" fxLayout.lt-md="column" ngClass.lt-md="splash__container--sm"
-  ngClass.lt-sm="splash__container--sm splash__container--xs">
-  <div #splashWindow class='splash__window'>
-    <div class="splash__deck">
-      <mat-flashcard *ngFor="let mat of cardDisplay; let i = index" class="splash__card" [ngClass]="'splash__card' + [i+1]" [material]="mat"></mat-flashcard>
+<div class="splash__container" fxLayout="column" fxLayoutGap="36px" fxLayoutAlign="start center" ngClass.lt-md="splash__container--sm" ngClass.lt-sm="splash__container--sm splash__container--xs">
+
+  <div class="splash__row splash__intro">
+    <div #splashWindow class='splash__cell splash__window'>
+      <div class="splash__deck">
+        <mat-flashcard *ngFor="let mat of cardDisplay; let i = index" class="splash__card" [ngClass]="'splash__card' + [i+1]" [material]="mat"></mat-flashcard>
+      </div>
+    </div>
+    <div class="splash__cell splash__home">
+      <div class="splash_headline">A technology vocab <br>e-flashcard</div>
+      <button class="splash__cta" mat-raised-button color="primary">Learn More</button>
     </div>
   </div>
 
-
-  <div class="splash__home">
-    <div class="splash_headline">A technology vocab <br>e-flashcard</div>
-
-
-    <button class="splash__cta" mat-raised-button color="primary">Learn More</button>
+  <div class="splash__row ">
+    <div class="splash__cell splash__promo">
+      <span>2000+ Cards</span>
+    </div>
+    <div class="splash__cell splash__feature">
+      <img class="splash__img" src=".\assets\img\lots-of-cards.png" />
+    </div>
   </div>
+
+  <div class="splash__row splash__row--reverse">
+    <div class="splash__cell splash__promo">
+      <span>Technology Vocabulary</span>
+    </div>
+    <div class="splash__cell splash__feature ">
+      <img class="splash__img" src=".\assets\img\vocab-cloud.png" />
+    </div>
+  </div>
+
+  <div class="splash__row ">
+    <div class="splash__cell splash__promo">
+      <span>Colors and Shapes</span>
+    </div>
+    <div class="splash__cell splash__feature">
+      <img class="splash__img" src=".\assets\img\card-shutter.png" />
+    </div>
+  </div>
+
 </div>
