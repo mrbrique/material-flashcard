@@ -1,0 +1,147 @@
+/*
+ * card face color
+ */
+@red: #EC1F26;
+@yellow: #FFD92E;
+@pink: #F289AA;
+@orange: #F37C28;
+@purple: #98377C;
+@blue: #0096D5;
+@green: #60A74A;
+@violet: #5E549B; /*
+ * card border style
+ */
+@card-border-width: 8px;
+@card-border-radius: 0.125in;
+/*
+ * card paper style
+ */
+.card-paper-background {
+  background-image: radial-gradient(farthest-corner at 25% 25%, white 20%, #f6f6f4);
+}
+
+.card-paper-finish {
+  background-image: url("./assets/image/noise-6-4-216x332.png");
+}
+/*
+ * card font style
+ */
+@card-font-color: grey;
+
+.card-font-family {
+  font-family: KGPrimaryPenmanship2, Verdana, Arial, sans-serif;
+}
+
+.card-font-style {
+  .card-font-family ();
+  color: @card-font-color;
+}
+
+:host {
+  display: inline-block;
+  border-radius: @card-border-radius;
+  overflow: hidden;
+}
+
+.flashcard__back {
+  width: 2.125in;
+  height: 3.370in;
+  position: relative;
+  box-sizing: border-box;
+
+  .flashcard__finish {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    .card-paper-finish ();
+  }
+
+  .flashcard__border {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+
+    .flashcard__paper {
+      box-sizing: border-box;
+      width: 100%;
+      height: 100%;
+      padding: 8px 0;
+      border-radius: @card-border-radius;
+      .card-paper-background ();
+
+      .flashcard__detail {
+        margin-bottom: 4px;
+      }
+
+      .flashcard__detail,
+      .flashcard__entity {
+        .mat-list-item {
+          height: 56px;
+        }
+
+        .flashcard__detail_prop {
+          border-bottom: 1px dashed grey;
+        }
+
+        .flashcard__detail_value {
+          text-align: right;
+          font-weight: bold;
+          margin-top: 4px;
+        }
+      }
+    }
+  }
+}
+
+.flashcard-color (@color) {
+  .flashcard__border {
+    background-color: @color;
+    border: @card-border-width solid @color;
+  }
+
+  .flashcard__entity {
+    background-color: @color;
+
+    .mat-list-item {
+      @half-grey: rgb(50%, 50%, 50%);
+      @contrast: -25%;
+      @foreground-luma: luma(@color);
+      @max-luma: 100;
+      @contrast-lima: mod((@max-luma * floor(abs(@foreground-luma) + abs(@contrast)))+@foreground-luma+@contrast, @max-luma);
+      color: hsl(0, 0, @contrast-lima);
+    }
+  }
+}
+
+.flashcard__back--red {
+  .flashcard-color (@red);
+}
+
+.flashcard__back--yellow {
+  .flashcard-color (@yellow);
+}
+
+.flashcard__back--pink {
+  .flashcard-color (@pink);
+}
+
+.flashcard__back--orange {
+  .flashcard-color (@orange);
+}
+
+.flashcard__back--purple {
+  .flashcard-color (@purple);
+}
+
+.flashcard__back--blue {
+  .flashcard-color (@blue);
+}
+
+.flashcard__back--green {
+  .flashcard-color (@green);
+}
+
+.flashcard__back--violet {
+  .flashcard-color (@violet);
+}

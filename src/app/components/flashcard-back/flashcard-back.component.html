@@ -1,0 +1,36 @@
+<div *ngIf="material" class="flashcard__back" [ngClass]="'flashcard__back--'+material.color().name">
+  <div class="flashcard__finish"></div>
+  <div class="flashcard__border">
+    <div class="flashcard__paper">
+      <div class="flashcard__detail">
+        <mat-list>
+          <mat-list-item role="listitem">
+            <p class="flashcard__detail_prop" mat-line>Ligatures</p>
+            <h4 class="flashcard__detail_value" mat-line>{{material.getCodepoint().name}}</h4>
+          </mat-list-item>
+          <mat-list-item role="listitem">
+            <p class="flashcard__detail_prop" mat-line>Color</p>
+            <h4 class="flashcard__detail_value" mat-line>{{material.color().hexRgb}}</h4>
+          </mat-list-item>
+          <mat-list-item role="listitem">
+            <p class="flashcard__detail_prop" mat-line>Codepoint</p>
+            <h4 class="flashcard__detail_value" mat-line>{{material.getCodepoint().code}}</h4>
+          </mat-list-item>
+        </mat-list>
+
+      </div>
+      <div class="flashcard__entity">
+        <mat-list>
+          <mat-list-item role="listitem">
+            <p class="flashcard__detail_prop" mat-line>Decimal</p>
+            <h4 class="flashcard__detail_value" mat-line>#&{{material.getCodepoint().code|parseIntPipe:16}}</h4>
+          </mat-list-item>
+          <mat-list-item role="listitem">
+            <p class="flashcard__detail_prop" mat-line>Hexadecimal</p>
+            <h4 class="flashcard__detail_value" mat-line>#&x{{material.getCodepoint().code}}</h4>
+          </mat-list-item>
+        </mat-list>
+      </div>
+    </div>
+  </div>
+</div>
