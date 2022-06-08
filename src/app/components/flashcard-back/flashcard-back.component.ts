@@ -18,9 +18,7 @@ export class FlashcardBackComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.codepointService.getIndexedCodepoint(Math.floor(Math.random() * 999)).subscribe(
-      cp => this.material = new Material(cp)
-    );
+
   }
 
 }
