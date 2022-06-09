@@ -34,6 +34,7 @@ import { FlashcardDetailComponent } from './components/flashcard-detail/flashcar
 import { SplashScreenComponent } from './components/splash-screen/splash-screen.component';
 import { FanDeckComponent } from './components/fan-deck/fan-deck.component';
 import { FlashcardBackComponent } from './components/flashcard-back/flashcard-back.component';
+import { FlashcardShuffleComponent } from './components/flashcard-shuffle/flashcard-shuffle.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { FlashcardBackComponent } from './components/flashcard-back/flashcard-ba
     FlashcardDetailComponent,
     SplashScreenComponent,
     FanDeckComponent,
-    FlashcardBackComponent
+    FlashcardBackComponent,
+    FlashcardShuffleComponent
   ],
   imports: [
     BrowserModule,
