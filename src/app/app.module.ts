@@ -26,7 +26,6 @@ import { DeckComponent } from './components/deck/deck.component';
 import { HexColorPipe } from './pipe/hex-color.pipe';
 import { ParseIntPipePipe } from './pipe/parse-int-pipe.pipe';
 import { HandComponent } from './components/hand/hand.component';
-import { ShuffleComponent } from './components/shuffle/shuffle.component';
 import { FlashcardCatalogComponent } from './components/flashcard-catalog/flashcard-catalog.component';
 import { FlashcardWallComponent } from './components/flashcard-wall/flashcard-wall.component';
 import { FlashcardBlockComponent } from './components/flashcard-block/flashcard-block.component';
@@ -43,7 +42,6 @@ import { FlashcardShuffleComponent } from './components/flashcard-shuffle/flashc
     DeckComponent,
     HexColorPipe,
     HandComponent,
-    ShuffleComponent,
     FlashcardCatalogComponent,
     FlashcardWallComponent,
     FlashcardBlockComponent,
