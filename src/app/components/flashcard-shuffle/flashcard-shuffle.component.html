@@ -1,1 +1,14 @@
-<p>flashcard-shuffle works!</p>
+<div class="swipe__horizontal">
+  <span class="material-icons">swipe</span>
+</div>
+
+
+<virtual-scroller #scroll class="scroller " [items]="materials" [horizontal]="true">
+  <div class="scroller__swipebox " *ngFor="let mat of scroll.viewPortItems">
+    <mat-flashcard [material]="mat"></mat-flashcard>
+  </div>
+</virtual-scroller>
+
+<div class="swipe__handle">
+  <mat-icon class="swipe__up" svgIcon="swipe-up"></mat-icon>
+</div>
