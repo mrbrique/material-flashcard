@@ -1,7 +1,6 @@
-<div class="swipe__horizontal">
+<div [@fadeout]="idle?'ceased':'persist'" class="swipe__horizontal">
   <span class="material-icons">swipe</span>
 </div>
-
 
 <virtual-scroller #scroll class="scroller " [items]="materials" [horizontal]="true">
   <div class="scroller__swipebox " *ngFor="let mat of scroll.viewPortItems">
@@ -9,6 +8,6 @@
   </div>
 </virtual-scroller>
 
-<div class="swipe__handle">
+<div [@fadeout]="idle?'ceased':'persist'" class="swipe__handle">
   <mat-icon class="swipe__up" svgIcon="swipe-up"></mat-icon>
 </div>

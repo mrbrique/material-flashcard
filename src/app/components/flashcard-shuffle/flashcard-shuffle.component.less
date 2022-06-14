@@ -1,5 +1,9 @@
+@grey400: #BDBDBD;
+@grey600: #757575;
+
 :host {
   height: 100%;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -9,7 +13,7 @@
     margin-top: 32px;
 
     .material-icons {
-      color: rgba(0, 0, 0, 0.24);
+      color: @grey400;
       font-size: 48px;
     }
   }
@@ -19,20 +23,18 @@
     height: 360px;
     min-height: 340px;
     scroll-snap-type: x mandatory;
-    overflow: hidden;
 
     .scroller__swipebox {
       width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
       scroll-snap-align: start;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
     }
   }
 
   .swipe__handle {
-    background-color: rgba(0, 0, 0, 0.24);
+    background-color: @grey400;
     width: 120px;
     height: 24px;
     border-top-left-radius: 8px;
@@ -42,7 +44,7 @@
     .swipe__up {
       width: 80%;
       height: 100%;
-      stroke: grey;
+      stroke: @grey600;
     }
   }
 }
